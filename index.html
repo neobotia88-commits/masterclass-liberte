@@ -539,22 +539,12 @@
       <span class="eyebrow">&#128274; Places limitees</span>
       <h3>Reserve ta place a la masterclass</h3>
       <p class="sub">Dimanche a 18h00, entre ton prenom et ton email pour recevoir ton lien d'acces.</p>
-      <form id="leadForm">
-        <div class="field">
-          <label for="fname">Prenom</label>
-          <input type="text" id="fname" name="fname" placeholder="Ton prenom" required>
+      <div id="wjEmbed">
+        <div class="wj-embed-wrapper" data-webinar-hash="ykz6rzf7">
+<script src="https://event.webinarjam.com/register/ykz6rzf7/embed-form?formButtonText=Je%20verrouille%20ma%20place&formAccentColor=%23ff3b3b&formAccentOpacity=0.95&formBgColor=%23ffffff&formBgOpacity=1"></script>
         </div>
-        <div class="field">
-          <label for="femail">Email</label>
-          <input type="email" id="femail" name="femail" placeholder="ton@email.com" required>
-        </div>
-        <div class="field">
-          <label for="fphone">Telephone</label>
-          <input type="tel" id="fphone" name="fphone" placeholder="06 12 34 56 78" required>
-        </div>
-        <button type="submit" class="btn btn-urgent">&#9889; Je verrouille ma place maintenant</button>
-        <p class="fine">Zero spam. Tu peux te desinscrire a tout moment.</p>
-      </form>
+      </div>
+      <p class="fine">Zero spam. Tu peux te desinscrire a tout moment.</p>
     </div>
     <div id="successState" style="display:none;">
       <div class="success">
@@ -573,7 +563,6 @@
     var overlay = document.getElementById('overlay');
     var closeBtn = document.getElementById('closeBtn');
     var openBtn = document.getElementById('openPopupBtn');
-    var form = document.getElementById('leadForm');
     var formState = document.getElementById('formState');
     var successState = document.getElementById('successState');
     var alreadyShown = false;
@@ -656,13 +645,6 @@
       if (e.target === overlay) closePopup();
     });
 
-    form.addEventListener('submit', function(e){
-      e.preventDefault();
-      // Ici, remplace ce bloc par l'envoi reel vers WebinarJam
-      // (formulaire natif WebinarJam, webhook, ou redirection vers leur page d'inscription)
-      formState.style.display = 'none';
-      successState.style.display = 'block';
-    });
   })();
 </script>
 
